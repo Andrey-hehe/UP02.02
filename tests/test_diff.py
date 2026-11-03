@@ -1,8 +1,8 @@
 import unittest
 from difflib import SequenceMatcher
 
-class TestDiff(unittest.TestCase):
 
+class TestDiff(unittest.TestCase):
     def test_identical_text(self):
         a = "Hello"
         b = "Hello"
@@ -18,6 +18,7 @@ class TestDiff(unittest.TestCase):
         matcher = SequenceMatcher(None, a, b)
 
         self.assertLess(matcher.ratio(), 1.0)
+
 
 if __name__ == "__main__":
     unittest.main()
