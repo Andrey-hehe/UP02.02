@@ -37,8 +37,7 @@ UP02.02/
 │   ├── first.txt
 │   ├── second.txt
 │   ├── first.json
-│   ├── second.json
-│   └── test_json.py
+│   └── second.json
 ├── docs/
 ├── README.md
 └── .gitignore
