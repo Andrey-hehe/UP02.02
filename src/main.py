@@ -2,6 +2,7 @@ import argparse
 import difflib
 import json
 import sys
+from html import escape
 from pathlib import Path
 
 
@@ -84,8 +85,8 @@ def compare_files(first_file, second_file):
     diff = difflib.HtmlDiff().make_file(
         first_content.splitlines(),
         second_content.splitlines(),
-        fromdesc=Path(first_file).name,
-        todesc=Path(second_file).name,
+        fromdesc=escape(Path(first_file).name),
+        todesc=escape(Path(second_file).name),
         charset="utf-8",
     )
 
