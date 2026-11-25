@@ -61,7 +61,7 @@ cd UP02.02
 3. Запустить сравнение файлов:
 
 ```bash
-python src/main.py first.txt second.txt -o report.html
+python src/main.py examples/first.txt examples/second.txt -o report.html
 ```
 
 После выполнения будет создан HTML-отчёт `report.html`.
@@ -75,7 +75,7 @@ python src/main.py first.txt second.txt -o report.html
 ```python
 from src.main import compare_json
 
-result = compare_json("first.json", "second.json")
+result = compare_json("examples/first.json", "examples/second.json")
 print(result)
 ```
 

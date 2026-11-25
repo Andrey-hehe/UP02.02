@@ -1,6 +1,7 @@
 import argparse
 import difflib
 import json
+import sys
 from pathlib import Path
 
 
@@ -110,9 +111,12 @@ def main():
         save_report(report, args.output)
         print(f"Отчёт успешно создан: {args.output}")
 
-    except (FileNotFoundError, ValueError, json.JSONDecodeError) as error:
-        print(f"Ошибка: {error}")
+    except (OSError, ValueError) as error:
+        print(f"Ошибка: {error}", file=sys.stderr)
+        return 1
+
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
